@@ -1,27 +1,21 @@
-<div class="content" role="main">
-  <section>
-    <div class="example-label">Basic</div>
-    <div class="example-button-row">
-      <button mat-button>Basic</button>
-      <button mat-button color="primary">Primary</button>
-      <button mat-button color="accent">Accent</button>
-      <button mat-button color="warn">Warn</button>
-      <button mat-button disabled>Disabled</button>
-      <a mat-button href="https://www.google.com/" target="_blank">Link</a>
-    </div>
-  </section>
+<app-input-group
+  [inputConfig]="{
+    label: 'Title',
+    isRequired: true,
+    placeholder: 'Task title',
+    id: 'title',
+    type: 'text'
+  }"
+  controlName="title"
+></app-input-group>
 
-  <section>
-    <div class="example-label">Raised</div>
-    <div class="example-button-row">
-      <button mat-raised-button>Basic</button>
-      <button mat-raised-button color="primary">Primary</button>
-      <button mat-raised-button color="accent">Accent</button>
-      <button mat-raised-button color="warn">Warn</button>
-      <button mat-raised-button disabled>Disabled</button>
-      <a mat-raised-button href="https://www.google.com/" target="_blank"
-        >Link</a
-      >
-    </div>
-  </section>
-</div>
+<app-input-group
+  [inputConfig]="{
+    label: 'Description',
+    isRequired: true,
+    placeholder: 'Task description...',
+    id: 'description',
+    type: 'textarea'
+  }"
+  controlName="description"
+></app-input-group>

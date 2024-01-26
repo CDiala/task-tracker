@@ -1,0 +1,36 @@
+@if (config) {
+<div class="flex flex-col justify-start gap-2">
+  <!-- Display label if label property is provided -->
+  @if (config.label) {
+  <label class="text-[#374151] text-sm font-medium" for="{{ config.id }}"
+    >{{ config.label
+    }}<span [class.text-[#ca1012]]="config.isRequired" *ngIf="config.isRequired"
+      >*</span
+    ></label
+  >
+  } @if (config.type === 'textarea') {
+
+  <!-- Render custom textarea -->
+  <textarea
+    class="flex self-stretch items-center gap-3 p-3 rounded-lg text-sm border-[1.5px] border-solid border-[#d9dce1] font-normal focus-visible:outline-[#ca1012]"
+    name="{{ config.type }}"
+    id="{{ config.id }}"
+    cols="30"
+    rows="10"
+    [placeholder]="config.placeholder"
+    [formControl]="formName()"
+  ></textarea>
+  } @else if (config.type !== 'checkbox') {
+
+  <!-- Render other input types other than custom checkbox -->
+  <input
+    class="flex self-stretch items-center gap-3 p-3 rounded-lg text-sm border-[1.5px] border-solid border-[#d9dce1] font-normal focus-visible:outline-[#ca1012]"
+    type="{{ config.type }}"
+    name="{{ config.type }}"
+    id="{{ config.id }}"
+    placeholder="{{ config.placeholder }}"
+    [formControl]="formName()"
+  />
+  }
+</div>
+}
