@@ -1,0 +1,61 @@
+<form
+  (formdata)="(taskForm)"
+  (ngSubmit)="(handleFormSubmit)"
+  class="p-5 sm:p-4 flex flex-col gap-12"
+>
+  <!-- Task Title -->
+  <app-input-group
+    [inputConfig]="{
+      label: 'Title',
+      isRequired: true,
+      placeholder: 'Task title',
+      id: 'title',
+      type: 'text'
+    }"
+    controlName="title"
+    [form]="taskForm"
+  ></app-input-group>
+
+  <!-- Task Description -->
+  <app-input-group
+    [inputConfig]="{
+      label: 'Description',
+      isRequired: true,
+      placeholder: 'Task description...',
+      id: 'description',
+      type: 'textarea'
+    }"
+    controlName="description"
+    [form]="taskForm"
+  ></app-input-group>
+
+  <!-- Date -->
+  <app-input-date
+    label="Due Date"
+    (change)="getDateValue($event)"
+    value="{formValues.date}"
+    placeholder="Date"
+    controlName="due_date"
+    [form]="taskForm"
+  ></app-input-date>
+
+  <!-- Action buttons -->
+  <section class="flex justify-end gap-4">
+    <button
+      (click)="handleFormSubmit()"
+      mat-raised-button
+      color="primary"
+      type="button"
+    >
+      Save
+    </button>
+    <button
+      (click)="handleFormClose()"
+      mat-raised-button
+      color="accent"
+      type="button"
+    >
+      Cancel
+    </button>
+  </section>
+</form>
