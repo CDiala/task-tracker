@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputGroupComponent } from './components/input-group/input-group.component';
+import { InputDateComponent } from './components/input-date/input-date.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { InputGroupComponent } from './components/input-group/input-group.compon
     AppRoutingModule,
     BrowserAnimationsModule,
     InputGroupComponent,
+    InputDateComponent,
   ],
 })
 export class AppModule {}

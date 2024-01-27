@@ -7,6 +7,7 @@
     type: 'text'
   }"
   controlName="title"
+  [form]="taskForm"
 ></app-input-group>
 
 <app-input-group
@@ -18,4 +19,14 @@
     type: 'textarea'
   }"
   controlName="description"
+  [form]="taskForm"
 ></app-input-group>
+
+<app-input-date
+  label="Due Date"
+  (change)="getDateValue($event)"
+  value="{formValues.date}"
+  placeholder="Date"
+  controlName="due_date"
+  [form]="taskForm"
+></app-input-date>
