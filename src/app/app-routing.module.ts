@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { KanbanFormComponent } from './components/kanban-form/kanban-form.component';
-import { KanbanCardComponent } from './components/kanban-card/kanban-card.component';
+import { KanbanColumnComponent } from './components/kanban-column/kanban-column.component';
 
 const routes: Routes = [
   {
@@ -14,8 +14,8 @@ const routes: Routes = [
     component: KanbanFormComponent,
   },
   {
-    path: 'card',
-    component: KanbanCardComponent,
+    path: 'col',
+    component: KanbanColumnComponent,
   },
 ];
 

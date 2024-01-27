@@ -1,0 +1,43 @@
+<div cdkDropListGroup>
+  <div
+    class="w-[25rem] max-w-full mr-6 mb-6 inline-block align-top p-4 bg-[#aea6a68c] rounded-[0.3rem]"
+  >
+    <h2>To do</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="todo"
+      class="bg-transparent flex flex-col gap-4 min-h-[60px] rounded-[0.25rem] overflow-hidden"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of todo; track item) {
+      <app-kanban-card
+        [title]="item"
+        cdkDrag
+        class="example-box"
+      ></app-kanban-card>
+      }
+    </div>
+  </div>
+
+  <div
+    class="w-[25rem] max-w-full mr-6 mb-6 inline-block align-top p-4 bg-[#aea6a68c] rounded-[0.3rem]"
+  >
+    <h2>Done</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="done"
+      class="bg-transparent flex flex-col gap-4 min-h-[60px] rounded-[0.25rem] overflow-hidden"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of done; track item) {
+      <app-kanban-card
+        [title]="item"
+        cdkDrag
+        class="example-box"
+      ></app-kanban-card>
+      }
+    </div>
+  </div>
+</div>
