@@ -12,13 +12,13 @@ import { NicePipe } from '../../pipes/nice.pipe';
 })
 export class KanbanCardComponent {
   @Input({ alias: 'taskInfo', required: true }) taskInfo!: ITaskInfo;
-  @Output() click: EventEmitter<ITaskInfo> = new EventEmitter();
+  @Output() onclick: EventEmitter<ITaskInfo> = new EventEmitter();
   isHovered: boolean = false;
 
   constructor() {}
 
   handleEdittask(event: Event, item: ITaskInfo) {
     event.stopPropagation();
-    this.click.emit(item);
+    this.onclick.emit(item);
   }
 }

@@ -14,7 +14,7 @@
     >
       @for (item of open; track item) {
       <app-kanban-card
-        (click)="editTask(item)"
+        (onclick)="editTask(item)"
         [taskInfo]="item"
         cdkDrag
         class="example-box"
@@ -47,7 +47,7 @@
     >
       @for (item of pending; track item) {
       <app-kanban-card
-        (click)="editTask(item)"
+        (onclick)="editTask(item)"
         [taskInfo]="item"
         cdkDrag
         class="example-box"
@@ -71,7 +71,7 @@
     >
       @for (item of inProgress; track item) {
       <app-kanban-card
-        (click)="editTask(item)"
+        (onclick)="editTask(item)"
         [taskInfo]="item"
         cdkDrag
         class="example-box"
@@ -95,7 +95,7 @@
     >
       @for (item of completed; track item) {
       <app-kanban-card
-        (click)="editTask(item)"
+        (onclick)="editTask(item)"
         [taskInfo]="item"
         cdkDrag
         class="example-box"
