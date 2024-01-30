@@ -11,13 +11,11 @@ import { getValue } from 'src/utils/dateFormatter';
 })
 export class InputDateComponent {
   @Input({ alias: 'label', required: false }) label!: string;
+  @Input({ alias: 'selectedValue', required: false }) selectedValue!: string;
   @Input()
   controlName!: string;
   @Input()
   form!: FormGroup;
-  // @Output() dateEmitter: EventEmitter<string> = new EventEmitter<string>();
-
-  selectedValue!: string;
   placeholder!: string;
 
   formName() {
@@ -26,7 +24,6 @@ export class InputDateComponent {
 
   saveDate(event: Event) {
     this.selectedValue = getValue(event);
-    // this.dateEmitter.emit(this.selectedValue);
   }
 
   onChange() {}
