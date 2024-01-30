@@ -1,0 +1,136 @@
+{
+  "users": [
+    {
+      "_id": "d5fc7030-0fcf-4d4f-8d24-3c59a6e02c11",
+      "full_name": "John Doe",
+      "tasks": [
+        {
+          "title": "Complete Daily Report",
+          "description": "Review and submit the daily progress report.",
+          "due_date": "Feb 01, 2024",
+          "status": "in progress"
+        },
+        {
+          "title": "Attend Team Meeting",
+          "description": "Participate in the weekly team meeting to discuss project updates.",
+          "due_date": "Feb 03, 2024",
+          "status": "open"
+        },
+        {
+          "title": "Code Refactoring",
+          "description": "Refactor existing codebase to improve code quality.",
+          "due_date": "Feb 05, 2024",
+          "status": "pending"
+        },
+        {
+          "title": "Review Code Changes",
+          "description": "Review recent code changes and provide feedback.",
+          "due_date": "Feb 07, 2024",
+          "status": "open"
+        },
+        {
+          "title": "Prepare Sprint Backlog",
+          "description": "Prepare the backlog for the upcoming sprint planning.",
+          "due_date": "Feb 10, 2024",
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "_id": "45e3c6a5-83a0-4a5c-bfd5-7a17b29de8a1",
+      "full_name": "Alice Johnson",
+      "tasks": [
+        {
+          "title": "Meeting with Clients",
+          "description": "Conduct a meeting with clients to discuss project requirements.",
+          "due_date": "Jan 25, 2024",
+          "status": "completed"
+        },
+        {
+          "title": "Prepare Project Presentation",
+          "description": "Create a presentation for the upcoming project review.",
+          "due_date": "Jan 30, 2024",
+          "status": "in progress"
+        },
+        {
+          "title": "Test New Feature",
+          "description": "Perform testing on the recently implemented feature.",
+          "due_date": "Feb 02, 2024",
+          "status": "pending"
+        },
+        {
+          "title": "Update Documentation",
+          "description": "Update project documentation to reflect recent changes.",
+          "due_date": "Feb 04, 2024",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "_id": "eb08d7b1-6da2-4751-9c6f-14c44a6d7c6d",
+      "full_name": "Bob Smith",
+      "tasks": [
+        {
+          "title": "Code Review",
+          "description": "Perform a code review for the latest feature implementation.",
+          "due_date": "Jan 30, 2024",
+          "status": "open"
+        },
+        {
+          "title": "Update UI Design",
+          "description": "Implement updates to the user interface design based on feedback.",
+          "due_date": "Feb 03, 2024",
+          "status": "pending"
+        },
+        {
+          "title": "Optimize Database Queries",
+          "description": "Optimize database queries for improved performance.",
+          "due_date": "Feb 05, 2024",
+          "status": "in progress"
+        }
+      ]
+    },
+    {
+      "_id": "f487a481-4f42-4f1d-bb66-8360d6fb4d85",
+      "full_name": "Eva Martinez",
+      "tasks": [
+        {
+          "title": "Project Planning",
+          "description": "Plan the next phase of the project and outline tasks.",
+          "due_date": "Feb 05, 2024",
+          "status": "pending"
+        },
+        {
+          "title": "Create Wireframes",
+          "description": "Create wireframes for the upcoming feature implementation.",
+          "due_date": "Feb 08, 2024",
+          "status": "in progress"
+        }
+      ]
+    },
+    {
+      "_id": "8f7b937c-b731-4fbd-a0ce-f0a8a14a8db2",
+      "full_name": "Michael Brown",
+      "tasks": [
+        {
+          "title": "Debugging Session",
+          "description": "Debug and fix reported issues in the application.",
+          "due_date": "Jan 28, 2024",
+          "status": "open"
+        },
+        {
+          "title": "Implement Feature X",
+          "description": "Implement the new feature as per the project requirements.",
+          "due_date": "Feb 01, 2024",
+          "status": "in progress"
+        },
+        {
+          "title": "Write Unit Tests",
+          "description": "Write unit tests for the recent code changes.",
+          "due_date": "Feb 04, 2024",
+          "status": "completed"
+        }
+      ]
+    }
+  ]
+}

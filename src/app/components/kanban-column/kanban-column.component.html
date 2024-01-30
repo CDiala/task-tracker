@@ -1,18 +1,54 @@
-<div cdkDropListGroup>
+<div cdkDropListGroup class="flex justify-center flex-wrap gap-12">
+  <!-- OPEN COLUMN -->
   <div
-    class="w-[25rem] max-w-full mr-6 mb-6 inline-block align-top p-4 bg-[#aea6a68c] rounded-[0.3rem]"
+    class="min-w-72 max-w-full h-fit mr-6 mb-6 inline-block align-top p-4 bg-[#aea6a68c] rounded-[0.3rem]"
   >
-    <h2>To do</h2>
+    <h2>Open</h2>
 
     <div
+      data-name="open"
       cdkDropList
-      [cdkDropListData]="todo"
+      [cdkDropListData]="open"
       class="bg-transparent flex flex-col gap-4 min-h-[60px] rounded-[0.25rem] overflow-hidden"
       (cdkDropListDropped)="drop($event)"
     >
-      @for (item of todo; track item) {
+      @for (item of open; track item) {
       <app-kanban-card
-        [title]="item"
+        (click)="editTask(item)"
+        [taskInfo]="item"
+        cdkDrag
+        class="example-box"
+      ></app-kanban-card>
+      }
+    </div>
+    <button
+      class="my-4"
+      (click)="handleFormDisplay()"
+      mat-raised-button
+      color="primary"
+      type="button"
+    >
+      &plus; Add new task
+    </button>
+  </div>
+
+  <!-- PENDING COLUMN -->
+  <div
+    class="min-w-72 max-w-full h-fit mr-6 mb-6 inline-block align-top p-4 bg-[#aea6a68c] rounded-[0.3rem]"
+  >
+    <h2>Pending</h2>
+
+    <div
+      data-name="pending"
+      cdkDropList
+      [cdkDropListData]="pending"
+      class="bg-transparent flex flex-col gap-4 min-h-[60px] rounded-[0.25rem] overflow-hidden"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of pending; track item) {
+      <app-kanban-card
+        (click)="editTask(item)"
+        [taskInfo]="item"
         cdkDrag
         class="example-box"
       ></app-kanban-card>
@@ -20,20 +56,47 @@
     </div>
   </div>
 
+  <!-- IN PROGRESS COLUMN -->
   <div
-    class="w-[25rem] max-w-full mr-6 mb-6 inline-block align-top p-4 bg-[#aea6a68c] rounded-[0.3rem]"
+    class="min-w-72 max-w-full h-fit mr-6 mb-6 inline-block align-top p-4 bg-[#aea6a68c] rounded-[0.3rem]"
   >
-    <h2>Done</h2>
+    <h2>In Progress</h2>
 
     <div
+      data-name="in progress"
       cdkDropList
-      [cdkDropListData]="done"
+      [cdkDropListData]="inProgress"
       class="bg-transparent flex flex-col gap-4 min-h-[60px] rounded-[0.25rem] overflow-hidden"
       (cdkDropListDropped)="drop($event)"
     >
-      @for (item of done; track item) {
+      @for (item of inProgress; track item) {
       <app-kanban-card
-        [title]="item"
+        (click)="editTask(item)"
+        [taskInfo]="item"
+        cdkDrag
+        class="example-box"
+      ></app-kanban-card>
+      }
+    </div>
+  </div>
+
+  <!-- COMPLETED COLUMN -->
+  <div
+    class="min-w-72 max-w-full h-fit mr-6 mb-6 inline-block align-top p-4 bg-[#aea6a68c] rounded-[0.3rem]"
+  >
+    <h2>Completed</h2>
+
+    <div
+      data-name="completed"
+      cdkDropList
+      [cdkDropListData]="completed"
+      class="bg-transparent flex flex-col gap-4 min-h-[60px] rounded-[0.25rem] overflow-hidden completed"
+      (cdkDropListDropped)="drop($event)"
+    >
+      @for (item of completed; track item) {
+      <app-kanban-card
+        (click)="editTask(item)"
+        [taskInfo]="item"
         cdkDrag
         class="example-box"
       ></app-kanban-card>
@@ -41,3 +104,11 @@
     </div>
   </div>
 </div>
+
+@if (displayForm) {
+<app-kanban-form
+  [taskInfo]="currentTask"
+  (closeEvent)="handleFormClose()"
+  (submitEvent)="handleFormSubmit($event)"
+></app-kanban-form>
+}
