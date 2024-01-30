@@ -1,4 +1,4 @@
-# Angular 17 Task Tracker with SSR
+# Task Tracker with SSR
 
 ## Overview
 
@@ -58,7 +58,8 @@ Follow these steps to run the project locally:
 ## Usage
 
 - Once the application is running locally, navigate to the provided URL.
-  Use the Kanban board to manage tasks by dragging and dropping them between columns.
+
+- Use the Kanban board to manage tasks by dragging and dropping them between columns.
 
 - Enjoy a seamless task-tracking experience with SSR optimization.
 
