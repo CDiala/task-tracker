@@ -1,20 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ITaskInfo } from 'src/app/interfaces/i-user';
 import { AngularMaterialModule } from 'src/app/shared/angular-material/angular-material.module';
+import { NicePipe } from '../../pipes/nice.pipe';
 
 @Component({
   selector: 'app-kanban-card',
   standalone: true,
-  imports: [AngularMaterialModule],
   templateUrl: './kanban-card.component.html',
   styleUrl: './kanban-card.component.css',
+  imports: [AngularMaterialModule, NicePipe],
 })
 export class KanbanCardComponent {
-  @Input({ alias: 'title', required: true }) title!: string;
+  @Input({ alias: 'taskInfo', required: true }) taskInfo!: ITaskInfo;
+  @Output() click: EventEmitter<ITaskInfo> = new EventEmitter();
   isHovered: boolean = false;
 
-  constructor() {
-    this.title = 'Go to class';
-  }
+  constructor() {}
 
-  handleEdittask() {}
+  handleEdittask(event: Event, item: ITaskInfo) {
+    event.stopPropagation();
+    this.click.emit(item);
+  }
 }

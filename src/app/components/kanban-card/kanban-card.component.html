@@ -3,10 +3,12 @@
   (mouseleave)="isHovered = !isHovered"
   class="flex items-center justify-between py-2 px-4 bg-red-300 rounded-[0.25rem] cursor-pointer"
 >
-  <span class="font-semibold text-lg h-[30px]">{{ title }}</span>
+  <span class="flex items-center font-semibold text-sm h-[30px]">{{
+    taskInfo.title | nice : "15"
+  }}</span>
   @if ( isHovered ) {
   <button
-    (click)="handleEdittask()"
+    (click)="handleEdittask($event, taskInfo)"
     mat-raised-button
     color="accent"
     type="button"
