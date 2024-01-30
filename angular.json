@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/task-tracker",
+            "outputPath": "dist/task-tracker/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -93,6 +93,60 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/task-tracker/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "task-tracker:build:development",
+              "serverTarget": "task-tracker:server:development"
+            },
+            "production": {
+              "browserTarget": "task-tracker:build:production",
+              "serverTarget": "task-tracker:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "task-tracker:build:production",
+              "serverTarget": "task-tracker:server:production"
+            },
+            "development": {
+              "browserTarget": "task-tracker:build:development",
+              "serverTarget": "task-tracker:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
